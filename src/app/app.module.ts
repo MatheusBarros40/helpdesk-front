@@ -21,9 +21,13 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatTableModule} from "@angular/material/table";
 import {MatListModule} from "@angular/material/list";
 
+//componentes do projeto
+import { NavComponent } from './components/nav/nav.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
