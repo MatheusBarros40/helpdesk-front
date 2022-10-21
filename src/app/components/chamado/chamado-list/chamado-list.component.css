@@ -1,0 +1,32 @@
+.container{
+    width: 90%;
+    margin:auto;
+}
+table {
+    width: 100%;
+}
+mat-form-field{
+    width: 100%;
+}
+button{
+    width: 100%;
+    padding:1rem;
+}
+h1{
+    width: 100%;
+    text-align:center;
+    margin-bottom:2rem;
+}
+.edit{
+    color: rgb(0, 255, 187);
+    padding:1rem;
+}
+.visibility{
+    color: #018cbe;
+    padding:1rem;
+}
+mat-radio-group{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:1rem;
+}
