@@ -28,8 +28,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './components/login/login.component';
 import {ToastrModule} from "ngx-toastr";
-import {AuthInterceptor, AuthInterceptorProvider} from "./interceptor/auth.interceptor";
+import { AuthInterceptorProvider} from "./interceptor/auth.interceptor";
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
       closeButton: true,
       progressBar: true
     }),
-    // NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot()
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

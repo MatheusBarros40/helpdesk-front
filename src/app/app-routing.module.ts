@@ -9,7 +9,7 @@ import {TecnicoCreateComponent} from "./components/tecnico/tecnico-create/tecnic
 
 const routes: Routes = [
     {path:'login', component: LoginComponent},
-  {path:'', component:NavComponent, canActivate:[AuthGuard], children:[
+    {path:'', component:NavComponent, canActivate:[AuthGuard], children:[
       {path:'home', component:HomeComponent},
 
       {path:'tecnicos', component:TecnicoListComponent},
