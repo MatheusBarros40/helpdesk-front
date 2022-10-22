@@ -15,6 +15,7 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
   styleUrls: ['./chamado-update.component.css']
 })
 export class ChamadoUpdateComponent implements OnInit {
+
   chamado: Chamado = {
     prioridade:  '',
     status:      '',
@@ -35,8 +36,6 @@ export class ChamadoUpdateComponent implements OnInit {
   observacoes:FormControl = new FormControl(null, [Validators.required]);
   tecnico:    FormControl = new FormControl(null, [Validators.required]);
   cliente:    FormControl = new FormControl(null, [Validators.required]);
-
-
 
   constructor(
       private chamadoService: ChamadoService,
@@ -107,4 +106,5 @@ export class ChamadoUpdateComponent implements OnInit {
       return 'ALTA'
     }
   }
+
 }

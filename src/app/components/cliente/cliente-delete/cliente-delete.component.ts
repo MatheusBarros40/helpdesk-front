@@ -11,45 +11,47 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ClienteDeleteComponent implements OnInit {
   cliente: Cliente = {
-    id:'',
-    nome:'',
-    cpf:'',
-    email:'',
-    senha:'',
-    perfis:[],
-    dataCriacao:''
+    id:         '',
+    nome:       '',
+    cpf:        '',
+    email:      '',
+    senha:      '',
+    perfis:     [],
+    dataCriacao: ''
   }
+
   constructor(
       private service: ClienteService,
-      private toast: ToastrService,
-      private router: Router,
-      private route: ActivatedRoute,) { }
+      private toast:    ToastrService,
+      private router:          Router,
+      private route:   ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
-    this.cliente.id =this.route.snapshot.paramMap.get('id');
+    this.cliente.id = this.route.snapshot.paramMap.get('id');
     this.findById();
   }
 
-  findById():void{
+  findById(): void {
     this.service.findById(this.cliente.id).subscribe(resposta => {
-      resposta.perfis = [];
+      resposta.perfis = []
       this.cliente = resposta;
     })
   }
 
-  delete():void{
+  delete(): void {
     this.service.delete(this.cliente.id).subscribe(() => {
-      this.toast.success('Cliente excluído com sucesso!', 'Deletado');
-      this.router.navigate(['clientes']);
-    }, ex =>{
-      // console.log(ex);
-      if(ex.error.errors){
+      this.toast.success('Cliente deletado com sucesso', 'Delete');
+      this.router.navigate(['clientes'])
+    }, ex => {
+      if(ex.error.errors) {
         ex.error.errors.forEach(element => {
           this.toast.error(element.message);
         });
-      }else{
+      } else {
         this.toast.error(ex.error.message);
       }
     })
   }
+
 }

@@ -15,6 +15,7 @@ import {ChamadoService} from "../../../services/chamado.service";
   styleUrls: ['./chamado-create.component.css']
 })
 export class ChamadoCreateComponent implements OnInit {
+
   chamado: Chamado = {
     prioridade:  '',
     status:      '',
@@ -36,16 +37,19 @@ export class ChamadoCreateComponent implements OnInit {
   tecnico:    FormControl = new FormControl(null, [Validators.required]);
   cliente:    FormControl = new FormControl(null, [Validators.required]);
 
-  constructor(    private chamadoService: ChamadoService,
-                  private clienteService: ClienteService,
-                  private tecnicoService: TecnicoService,
-                  private toastService:    ToastrService,
-                  private router: Router,) { }
+  constructor(
+      private chamadoService: ChamadoService,
+      private clienteService: ClienteService,
+      private tecnicoService: TecnicoService,
+      private toastService:    ToastrService,
+      private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.findAllClientes();
     this.findAllTecnicos();
   }
+
   create(): void {
     this.chamadoService.create(this.chamado).subscribe(resposta => {
       this.toastService.success('Chamado criado com sucesso', 'Novo chamado');

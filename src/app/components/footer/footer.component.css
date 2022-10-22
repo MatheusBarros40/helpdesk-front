@@ -1,9 +1,13 @@
 p{
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
     opacity: .5;
+    display: inline-block;
 }
 
 .full-width{
     width:100%;
+}
+.container{
+    background:linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(37, 97, 207, 1) 0%, rgba(0, 212, 255,1) 100%);
 }

@@ -10,23 +10,24 @@ import {ChamadoService} from "../../../services/chamado.service";
   styleUrls: ['./chamado-list.component.css']
 })
 export class ChamadoListComponent implements OnInit {
+
   ELEMENT_DATA: Chamado[] = []
   FILTERED_DATA: Chamado[] = []
-
 
   displayedColumns: string[] = ['id', 'titulo', 'cliente', 'tecnico', 'dataAbertura', 'prioridade', 'status', 'acoes'];
   dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-
-  constructor(private service: ChamadoService) { }
+  constructor(
+      private service: ChamadoService
+  ) { }
 
   ngOnInit(): void {
     this.findAll();
   }
 
-  findAll():void{
+  findAll(): void {
     this.service.findAll().subscribe(resposta => {
       this.ELEMENT_DATA = resposta;
       this.dataSource = new MatTableDataSource<Chamado>(resposta);
@@ -39,22 +40,22 @@ export class ChamadoListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  retornaStatus(status: any):string {
-    if (status == '0'){
+  retornaStatus(status: any): string {
+    if(status == '0') {
       return 'ABERTO'
-    } else if (status == '1'){
+    } else if(status == '1') {
       return 'EM ANDAMENTO'
-    }else{
+    } else {
       return 'ENCERRADO'
     }
   }
 
-  retornaPrioridade(prioridade: any):string {
-    if (prioridade == '0'){
+  retornaPrioridade(prioridade: any): string {
+    if(prioridade == '0') {
       return 'BAIXA'
-    } else if (prioridade == '1'){
-      return 'MEDIA'
-    }else{
+    } else if(prioridade == '1') {
+      return 'MÉDIA'
+    } else {
       return 'ALTA'
     }
   }
@@ -69,4 +70,6 @@ export class ChamadoListComponent implements OnInit {
     this.dataSource = new MatTableDataSource<Chamado>(list);
     this.dataSource.paginator = this.paginator;
   }
+
+
 }

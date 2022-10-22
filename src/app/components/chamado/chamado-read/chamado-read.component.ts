@@ -10,6 +10,7 @@ import { ChamadoService } from 'src/app/services/chamado.service';
   styleUrls: ['./chamado-read.component.css']
 })
 export class ChamadoReadComponent implements OnInit {
+
   chamado: Chamado = {
     prioridade:  '',
     status:      '',
@@ -24,7 +25,8 @@ export class ChamadoReadComponent implements OnInit {
   constructor(
       private chamadoService: ChamadoService,
       private toastService:    ToastrService,
-      private route: ActivatedRoute,) { }
+      private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
     this.chamado.id = this.route.snapshot.paramMap.get('id');
@@ -58,4 +60,5 @@ export class ChamadoReadComponent implements OnInit {
       return 'ALTA'
     }
   }
+
 }
