@@ -19,6 +19,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatTableModule} from "@angular/material/table";
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatListModule} from "@angular/material/list";
 
 //componentes do projeto
@@ -87,6 +88,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MatTableModule,
     MatIconModule,
     MatListModule,
+    MatTooltipModule,
     MatCardModule,
     ToastrModule.forRoot({
       timeOut: 4000,

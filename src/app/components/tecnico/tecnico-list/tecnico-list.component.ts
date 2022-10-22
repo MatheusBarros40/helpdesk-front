@@ -3,6 +3,8 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {Tecnico} from "../../../models/tecnico";
 import {TecnicoService} from "../../../services/tecnico.service";
+import {TooltipPosition} from "@angular/material/tooltip";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-cliente-list',
@@ -10,6 +12,8 @@ import {TecnicoService} from "../../../services/tecnico.service";
   styleUrls: ['./tecnico-list.component.css']
 })
 export class TecnicoListComponent implements OnInit {
+  positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
+  position = new FormControl(this.positionOptions[1]);
 
   ELEMENT_DATA: Tecnico[] = []
 

@@ -3,6 +3,8 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {Cliente} from "../../../models/cliente";
 import {ClienteService} from "../../../services/cliente.service";
+import {TooltipPosition} from "@angular/material/tooltip";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-cliente-list',
@@ -11,6 +13,8 @@ import {ClienteService} from "../../../services/cliente.service";
 })
 export class ClienteListComponent implements OnInit {
 
+  positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
+  position = new FormControl(this.positionOptions[1]);
   ELEMENT_DATA: Cliente[] = []
 
   displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];

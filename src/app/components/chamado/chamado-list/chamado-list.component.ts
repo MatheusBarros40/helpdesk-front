@@ -3,6 +3,8 @@ import {Chamado} from "../../../models/chamado";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {ChamadoService} from "../../../services/chamado.service";
+import {TooltipPosition} from "@angular/material/tooltip";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-chamado-list',
@@ -10,7 +12,8 @@ import {ChamadoService} from "../../../services/chamado.service";
   styleUrls: ['./chamado-list.component.css']
 })
 export class ChamadoListComponent implements OnInit {
-
+  positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
+  position = new FormControl(this.positionOptions[1]);
   ELEMENT_DATA: Chamado[] = []
   FILTERED_DATA: Chamado[] = []
 
@@ -59,6 +62,8 @@ export class ChamadoListComponent implements OnInit {
       return 'ALTA'
     }
   }
+
+
 
   orderByStatus(status: any): void{
     let list: Chamado[] = []
