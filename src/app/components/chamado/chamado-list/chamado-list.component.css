@@ -22,7 +22,7 @@ h1{
     padding:1rem;
 }
 .visibility{
-    color: #018cbe;
+    color: #46be01;
     padding:1rem;
 }
 mat-radio-group{
@@ -30,3 +30,4 @@ mat-radio-group{
     justify-content:space-around;
     margin-bottom:1rem;
 }
+

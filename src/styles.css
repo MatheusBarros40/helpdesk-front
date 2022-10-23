@@ -3,6 +3,14 @@
 @import '../node_modules/ngx-toastr/toastr.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.truncate-cell {
+    max-width: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .col-12{
     width:100%;
 }
@@ -39,4 +47,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .col-1 {
     width: 8.33333%;
 }
+
+ml-1{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+
 
